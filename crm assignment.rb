@@ -18,8 +18,29 @@ class Contact
 
   def self.find(attribute)
     @@contacts.each do |contact|
-      return contact if contact.attribute == id.attribute
+      return contact if contact.attribute == :attribute
       puts "Who ya lookin for, lovely? first_name, last_name, email, note"
+  end
+
+      if attribute == Contact.first_name
+        puts "Here ya go!"
+        return contact
+      else
+        puts "no contact by that name exists"
+
+
+      if attribute == Contact.last_name
+        puts "Here ya go!"
+        return contact
+      else
+        puts "no contact by that name exists"
+
+      if attribute == Contact.email
+        puts "Here ya go!"
+        return contact
+      else
+        puts "no email exists"
+
 
   def add_new_contact
     new_contact = Contact.new(first_name, last_name, email, note)
@@ -28,7 +49,7 @@ class Contact
   end
 
   def edit_contact
-    puts "please tell me what you would like to update. first_name, last_name, email or note"
+    puts "please tell me what you would like to update - first_name, last_name, email or note"
     answer = gets
 
     if answer == "first_name"
@@ -36,7 +57,7 @@ class Contact
       new_name = gets
       @first_name = new_name
       puts "thank you for the change"
-      puts "would you like updated contact"
+      puts "would you like an updated contact"
 
     if answer == "Yes"
       puts "#{@first_name}, #{@last_name}, #{@email}, #{@note}"
@@ -49,7 +70,7 @@ class Contact
       new_name = gets
       @last_name = new_name
       puts "thank you for the change"
-      puts "would you like updated contact"
+      puts "would you like an updated contact"
 
     if answer == "Yes"
       puts "#{@first_name}, #{@last_name}, #{@email}, #{@note}"
@@ -62,7 +83,7 @@ class Contact
       email = gets
       @email = new_email
       puts "thank you for the change"
-      puts "would you like updated contact"
+      puts "would you like an updated contact"
 
     if answer == "Yes"
       puts "#{@first_name}, #{@last_name}, #{@email}, #{@note}"
@@ -75,7 +96,7 @@ class Contact
       note = gets
       @note = new_note
       puts "thank you for the change"
-      puts "would you like updated contact"
+      puts "would you like an updated contact"
 
     if answer == "Yes"
       puts "#{@first_name}, #{@last_name}, #{@email}, #{@note}"
