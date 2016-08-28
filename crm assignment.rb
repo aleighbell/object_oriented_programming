@@ -35,11 +35,20 @@ class Contact
       else
         puts "no contact by that name exists"
 
+
       if attribute == Contact.email
         puts "Here ya go!"
         return contact
       else
         puts "no email exists"
+
+
+      if attribute == Contact.note
+        puts "Here ya go!"
+        return note
+      else
+        puts "no note exists"
+
 
 
   def add_new_contact
@@ -103,3 +112,18 @@ class Contact
 
     if answer == "No"
       puts "okay!"
+
+  def self.delete
+    attribute = 0
+    puts "enter an attribute"
+    gets = attribute.to_i
+    @@contacts.each do |contact|
+    attribute = i + 1
+
+     if contact.attribute.to_i == attribute.to_i
+       puts "YIPPEE!" + contact.to_s + "gone fo good"
+     else
+       i = i + 1
+    end
+  end
+end
