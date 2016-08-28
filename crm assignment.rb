@@ -21,7 +21,15 @@ class Contact
     return new_contact
   end
 
+  def edit_contact(first_name, last_name, email, note, id)
+
   def self.all
+    return @@contacts
+  end
+
+  def self.find(id)
+    @@contacts.each do |contact|
+      return contact if contact.id == id
 
 
 
@@ -36,6 +44,3 @@ class Contact
 
     print "Enter a note, please"
     note = gets
-
-    Contact.create(first_name, last_name, email, note)
-  end
